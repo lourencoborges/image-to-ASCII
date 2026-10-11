@@ -189,15 +189,40 @@
       });
 
       $("download").addEventListener("click", () => {
-        const downloadUrl = URL.createObjectURL(
-          new Blob([result], { type: "text/plain;charset=utf-8" }),
-        );
+        const imageCanvas = createAsciiImage();
         const link = document.createElement("a");
         const baseName = sourceName.replace(/\.[^.]+$/, "") || "pixeltype";
 
-        link.href = downloadUrl;
-        link.download = `${baseName}-ascii.txt`;
+        link.href = imageCanvas.toDataURL("image/png");
+        link.download = `${baseName}-ascii.png`;
         link.click();
-        URL.revokeObjectURL(downloadUrl);
       });
+
+      function createAsciiImage() {
+        const lines = result.split("\n");
+        const fontSize = 14;
+        const lineHeight = 17;
+        const padding = 24;
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+
+        context.font = `${fontSize}px monospace`;
+        const characterWidth = context.measureText("M").width;
+        const columns = Math.max(...lines.map((line) => line.length));
+
+        canvas.width = Math.ceil(columns * characterWidth + padding * 2);
+        canvas.height = lines.length * lineHeight + padding * 2;
+
+        context.fillStyle = "#16171b";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.font = `${fontSize}px monospace`;
+        context.textBaseline = "top";
+        context.fillStyle = "#c8f169";
+
+        lines.forEach((line, index) => {
+          context.fillText(line, padding, padding + index * lineHeight);
+        });
+
+        return canvas;
+      }
     })();
