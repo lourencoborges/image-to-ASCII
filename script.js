@@ -170,7 +170,7 @@
           panY = 0;
         }
 
-        $("zoomLevel").textContent = `${Math.round(zoom * 100)}%`;
+        $("zoomReset").textContent = `${Math.round(zoom * 100)}%`;
         applyZoom();
       }
 

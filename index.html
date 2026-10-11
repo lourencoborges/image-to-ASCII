@@ -3,37 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101114">
+  <meta name="theme-color" content="#111214">
   <title>PixelType — imagem para ASCII</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="shell">
     <header>
-      <div class="brand">
-        <div class="brand-mark">A</div>
-        pixeltype
-      </div>
-      <div class="top-note">
-        <span>●</span> processamento local · suas imagens não saem do dispositivo
-      </div>
+      <div class="brand">pixeltype</div>
     </header>
 
     <section class="intro">
-      <div class="eyebrow">imagem → caracteres</div>
-      <h1>Pixels em palavras.</h1>
-      <p>Transforme qualquer imagem em arte ASCII. Ajuste o resultado e leve sua criação para onde quiser.</p>
+      <h1>Imagem para ASCII</h1>
+      <p>Transforme uma imagem em caracteres.</p>
     </section>
 
     <section class="workspace" aria-label="Conversor de imagem para ASCII">
       <aside class="card controls">
-        <h2 class="section-title">Sua imagem</h2>
+        <h2 class="section-title">Imagem</h2>
 
         <div class="drop" id="drop">
           <div class="drop-inner">
-            <div class="upload-icon" aria-hidden="true">↥</div>
-            <strong>Solte uma imagem aqui</strong>
-            <span>ou <button class="choose" id="choose">escolha um arquivo</button></span>
+            <strong>Solte uma imagem ou <button class="choose" id="choose">escolha um arquivo</button></strong>
             <span>PNG, JPG, WEBP · até 20 MB</span>
           </div>
         </div>
@@ -97,14 +88,13 @@
         <div class="output-head">
           <div class="output-title">
             <span class="status-dot" id="dot"></span>
-            Resultado ASCII
+            Prévia
           </div>
           <div class="output-tools">
             <div class="zoom-controls" aria-label="Controles de zoom da prévia">
               <button class="btn" id="zoomOut" type="button" aria-label="Diminuir zoom">−</button>
-              <span id="zoomLevel" aria-live="polite">100%</span>
+              <button class="btn zoom-level" id="zoomReset" type="button" aria-label="Ajustar zoom">100%</button>
               <button class="btn" id="zoomIn" type="button" aria-label="Aumentar zoom">+</button>
-              <button class="btn" id="zoomReset" type="button">Ajustar</button>
             </div>
             <button class="btn" id="copy" disabled>Copiar</button>
             <button class="btn" id="download" disabled>Baixar PNG</button>
@@ -113,9 +103,7 @@
 
         <div class="canvas" id="previewCanvas">
           <div class="empty" id="empty">
-            <div class="empty-glyph">{···}</div>
-            <p>Sua arte aparece aqui</p>
-            <small>Envie uma imagem e clique em converter.</small>
+            <p>Escolha uma imagem para começar</p>
           </div>
           <pre class="ascii" id="ascii" aria-label="Arte ASCII"></pre>
         </div>
@@ -127,7 +115,6 @@
       </section>
     </section>
 
-    <footer>Feito para brincar com luz, sombra e <b>caracteres.</b></footer>
   </main>
   <script src="script.js" defer></script>
 </body>
