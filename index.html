@@ -45,12 +45,24 @@
           <div class="field">
             <div class="field-head">
               <label for="width">Largura da arte</label>
-              <span class="value" id="widthValue">90 colunas</span>
+              <span class="value" id="widthValue">120 colunas</span>
             </div>
-            <input type="range" id="width" min="40" max="180" value="90">
+            <input type="range" id="width" min="60" max="240" value="120">
             <div class="range-hints">
               <span>mais leve</span>
               <span>mais detalhe</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="field-head">
+              <label for="contrast">Contraste</label>
+              <span class="value" id="contrastValue">35%</span>
+            </div>
+            <input type="range" id="contrast" min="0" max="100" value="35">
+            <div class="range-hints">
+              <span>suave</span>
+              <span>marcado</span>
             </div>
           </div>
 
@@ -88,12 +100,18 @@
             Resultado ASCII
           </div>
           <div class="output-tools">
+            <div class="zoom-controls" aria-label="Controles de zoom da prévia">
+              <button class="btn" id="zoomOut" type="button" aria-label="Diminuir zoom">−</button>
+              <span id="zoomLevel" aria-live="polite">100%</span>
+              <button class="btn" id="zoomIn" type="button" aria-label="Aumentar zoom">+</button>
+              <button class="btn" id="zoomReset" type="button">Ajustar</button>
+            </div>
             <button class="btn" id="copy" disabled>Copiar</button>
             <button class="btn" id="download" disabled>Baixar PNG</button>
           </div>
         </div>
 
-        <div class="canvas">
+        <div class="canvas" id="previewCanvas">
           <div class="empty" id="empty">
             <div class="empty-glyph">{···}</div>
             <p>Sua arte aparece aqui</p>

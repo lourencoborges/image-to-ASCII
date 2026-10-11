@@ -6,6 +6,6 @@ O projeto está separado em `index.html` (estrutura), `style.css` (visual) e `sc
 
 ## Como usar
 
-Abra `index.html` no navegador, escolha ou arraste uma imagem e ajuste a largura, o conjunto de caracteres e a inversão de tons. O resultado ASCII pode ser copiado como texto ou baixado como imagem PNG.
+Abra `index.html` no navegador, escolha ou arraste uma imagem e ajuste a largura, o contraste, o conjunto de caracteres e a inversão de tons. Use os controles ou a roda do mouse para aproximar a prévia; quando ampliada, arraste com o botão esquerdo para percorrer a arte. O resultado ASCII pode ser copiado como texto ou baixado como imagem PNG.
 
 Não precisa instalar dependências nem iniciar um servidor. São aceitas imagens PNG, JPG, WEBP, GIF e BMP de até 20 MB.
